@@ -37,7 +37,7 @@
 	"license": "MIT",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/SaiCharan1729/workflow-designer.git"
+		"url": "https://github.com/SaiCharan1729/tezo-sequential-workflow-designer.git"
 	},
 	"files": [
 		"lib/",
