@@ -5,7 +5,7 @@
 		"target": "es6",
 		"module": "es2015",
 		"sourceMap": false,
-		"strict": true,
+		"strict": false,
 		"allowJs": false,
 		"declaration": true,
 		"declarationDir": "./build/",
