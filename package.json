@@ -3,10 +3,19 @@
 	"description": "Forked version of sequential workflow designer",
 	"version": "1.0.5",
 	"type": "module",
-	"main": "./src",
-	"types": "./src",
+	"main": "./lib/esm/index.js",
+	"types": "./lib/index.d.ts",
 	"exports": {
-		".": "./src",
+		".": {
+			"types": {
+				"require": "./lib/index.d.ts",
+				"default": "./lib/index.d.ts"
+			},
+			"default": {
+				"require": "./lib/cjs/index.cjs",
+				"default": "./lib/esm/index.js"
+			}
+		},
 		"./css/designer.css": {
 			"default": "./css/designer.css"
 		},
@@ -27,9 +36,6 @@
 		},
 		"./sass/designer-dark.scss": {
 			"default": "./sass/designer-dark.scss"
-		},
-		"./src": {
-			"default": "./src"
 		}
 	},
 	"author": {
