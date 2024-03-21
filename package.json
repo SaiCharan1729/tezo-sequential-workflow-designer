@@ -16,6 +16,9 @@
 				"default": "./lib/esm/index.js"
 			}
 		},
+		"./src": {
+			"default": "./src"
+		},
 		"./css/designer.css": {
 			"default": "./css/designer.css"
 		},
@@ -46,19 +49,19 @@
 	"license": "MIT",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/SaiCharan1729/tezo-sequential-workflow-designer.git"
+		"url": "https://github.com/nocode-js/sequential-workflow-designer.git"
 	},
 	"files": [
 		"lib/",
 		"dist/",
 		"css/",
-		"sass/",
-		"src"
+		"sass/"
 	],
 	"publishConfig": {
 		"registry": "https://registry.npmjs.org/"
 	},
 	"scripts": {
+		
 		"clean": "rm -rf lib && rm -rf build && rm -rf dist && rm -rf node_modules/.cache/rollup-plugin-typescript2",
 		"start": "rollup -c --watch",
 		"start:clean": "yarn clean && npm run start",
@@ -93,7 +96,7 @@
 		"rollup": "^3.18.0",
 		"rollup-plugin-dts": "^5.2.0",
 		"rollup-plugin-typescript2": "^0.34.1",
-		"typescript": "^5.1.3",
+		"typescript": "^4.9.5",
 		"sass": "^1.66.1"
 	},
 	"keywords": [
