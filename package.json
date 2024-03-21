@@ -27,6 +27,9 @@
 		},
 		"./sass/designer-dark.scss": {
 			"default": "./sass/designer-dark.scss"
+		},
+		"./src": {
+			"default": "./src"
 		}
 	},
 	"author": {
