@@ -3,10 +3,10 @@
 	"description": "Forked version of sequential workflow designer",
 	"version": "1.0.1",
 	"type": "module",
-	"main": "./src/index.ts",
-	"types": "./src/index.ts",
+	"main": "./src",
+	"types": "./src",
 	"exports": {
-		".": "./src/index.ts",
+		".": "./src",
 		"./css/designer.css": {
 			"default": "./css/designer.css"
 		},
