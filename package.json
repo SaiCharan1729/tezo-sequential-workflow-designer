@@ -1,7 +1,7 @@
 {
 	"name": "tezo-sequential-workflow-designer",
 	"description": "Forked version of sequential workflow designer",
-	"version": "1.0.6",
+	"version": "1.0.7",
 	"type": "module",
 	"main": "./lib/esm/index.js",
 	"types": "./lib/index.d.ts",
@@ -61,7 +61,6 @@
 		"registry": "https://registry.npmjs.org/"
 	},
 	"scripts": {
-		
 		"clean": "rm -rf lib && rm -rf build && rm -rf dist && rm -rf node_modules/.cache/rollup-plugin-typescript2",
 		"start": "rollup -c --watch",
 		"start:clean": "yarn clean && npm run start",
