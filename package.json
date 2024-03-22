@@ -1,11 +1,10 @@
 {
 	"name": "tezo-sequential-workflow-designer",
 	"description": "Forked version of sequential workflow designer",
-	"version": "1.0.9",
+	"version": "1.0.10",
 	"type": "module",
 	"main": "./src",
 	"exports": {
-		
 		"./src": {
 			"default": "./src"
 		},
