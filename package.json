@@ -3,10 +3,18 @@
 	"description": "Forked version of sequential workflow designer",
 	"version": "1.0.10",
 	"type": "module",
-	"main": "./src",
+	"main": "./lib/esm/index.js",
+	"types": "./lib/index.d.ts",
 	"exports": {
-		"./src": {
-			"default": "./src"
+		".": {
+			"types": {
+				"require": "./lib/index.d.ts",
+				"default": "./lib/index.d.ts"
+			},
+			"default": {
+				"require": "./lib/cjs/index.cjs",
+				"default": "./lib/esm/index.js"
+			}
 		},
 		"./css/designer.css": {
 			"default": "./css/designer.css"
@@ -40,28 +48,11 @@
 		"type": "git",
 		"url": "https://github.com/nocode-js/sequential-workflow-designer.git"
 	},
-	"files": [
-		"lib/",
-		"dist/",
-		"css/",
-		"sass/",
-		"src"
-	],
 	"publishConfig": {
 		"registry": "https://registry.npmjs.org/"
 	},
 	"scripts": {
-		"clean": "rm -rf lib && rm -rf build && rm -rf dist && rm -rf node_modules/.cache/rollup-plugin-typescript2",
-		"start": "rollup -c --watch",
-		"start:clean": "yarn clean && npm run start",
-		"start:sass": "sass --no-source-map --watch ./sass:./css",
-		"build": "yarn clean && yarn build:sass && rollup -c",
-		"build:sass": "sass --no-source-map ./sass:./css",
-		"test": "karma start karma.conf.cjs",
-		"test:single": "karma start karma.conf.cjs --single-run",
-		"eslint": "eslint ./src --ext .ts",
-		"prettier": "prettier --check ./src ./sass",
-		"prettier:fix": "prettier --write ./src ./sass"
+		"clean": "rm -rf lib && rm -rf build && rm -rf dist && rm -rf node_modules/.cache/rollup-plugin-typescript2"
 	},
 	"dependencies": {
 		"sequential-workflow-model": "^0.2.0"
@@ -85,8 +76,9 @@
 		"rollup": "^3.18.0",
 		"rollup-plugin-dts": "^5.2.0",
 		"rollup-plugin-typescript2": "^0.34.1",
+		"sass": "^1.66.1",
 		"typescript": "^4.9.5",
-		"sass": "^1.66.1"
+		"webpack": "^5.91.0"
 	},
 	"keywords": [
 		"workflow",
