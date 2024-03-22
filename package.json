@@ -52,7 +52,17 @@
 		"registry": "https://registry.npmjs.org/"
 	},
 	"scripts": {
-		"clean": "rm -rf lib && rm -rf build && rm -rf dist && rm -rf node_modules/.cache/rollup-plugin-typescript2"
+		"clean": "rm -rf lib && rm -rf build && rm -rf dist && rm -rf node_modules/.cache/rollup-plugin-typescript2",
+		"start": "rollup -c --watch",
+		"start:clean": "yarn clean && npm run start",
+		"start:sass": "sass --no-source-map --watch ./sass:./css",
+		"build": "yarn clean && yarn build:sass && rollup -c",
+		"build:sass": "sass --no-source-map ./sass:./css",
+		"test": "karma start karma.conf.cjs",
+		"test:single": "karma start karma.conf.cjs --single-run",
+		"eslint": "eslint ./src --ext .ts",
+		"prettier": "prettier --check ./src ./sass",
+		"prettier:fix": "prettier --write ./src ./sass"
 	},
 	"dependencies": {
 		"sequential-workflow-model": "^0.2.0"
@@ -77,8 +87,7 @@
 		"rollup-plugin-dts": "^5.2.0",
 		"rollup-plugin-typescript2": "^0.34.1",
 		"sass": "^1.66.1",
-		"typescript": "^4.9.5",
-		"webpack": "^5.91.0"
+		"typescript": "^4.9.5"
 	},
 	"keywords": [
 		"workflow",
