@@ -32,7 +32,8 @@ export class Icons {
 	public static folder =
 		'M7.05 40q-1.2 0-2.1-.925-.9-.925-.9-2.075V11q0-1.15.9-2.075Q5.85 8 7.05 8h14l3 3h17q1.15 0 2.075.925.925.925.925 2.075v23q0 1.15-.925 2.075Q42.2 40 41.05 40Z';
 	public static chevronUp="M24 38V10M10 24l14-14 14 14";
-	
+	public static check="M18.137 38.6 4.3 24.763l3.794-3.794 10.043 10.043 21.369-21.37 3.794 3.795L18.137 38.6z"
+	public static progress="M24 8c7.83 0 14.51 5.67 15.78 13.4a3.057 3.057 0 0 0 2.98 2.6c.88 0 1.72-.39 2.29-1.06.58-.68.82-1.57.67-2.44C44 9.84 34.8 2 24 2 13.2 2 4 9.84 2.28 20.5c-.15.87.1 1.76.67 2.44.57.67 1.41 1.06 2.29 1.06a3.057 3.057 0 0 0 2.98-2.6C9.49 13.67 16.17 8 24 8zm0 0"
 	public static appendPath(parent: SVGElement, pathClassName: string, d: string, size: number): SVGGElement {
 		const g = Dom.svg('g');
 		const scale = size / 48;

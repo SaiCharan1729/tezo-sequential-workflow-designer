@@ -12,7 +12,7 @@
 @include sqd-theme-region('light');
 @include sqd-theme-placeholder('light');
 @include sqd-theme-validation-error-badge('light');
-
+@include sqd-theme-step-status-badge("light");
 @include sqd-theme-start-stop-root-component('light');
 
 @include sqd-theme-task-step-component('light');

@@ -238,7 +238,22 @@
 		}
 	}
 }
-
+@mixin sqd-theme-step-status-badge($theme) {
+	.sqd-theme-#{$theme} {
+		.sqd-step-status-loading {
+			fill: grey;
+		}
+		.sqd-step-status-loaded {
+			fill: green;
+		}
+		.sqd-step-status-rejected {
+			fill: #ffa200;
+		}
+		.sqd-step-status-icon {
+			fill:white ;
+		}
+	}
+}
 @mixin sqd-theme-start-stop-root-component($theme, $circleFillColor: #2c18df, $iconFillColor: #fff) {
 	.sqd-theme-#{$theme} {
 		.sqd-root-start-stop-circle {

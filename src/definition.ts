@@ -1,6 +1,6 @@
-import { BranchedStep, SequentialStep, Step } from 'sequential-workflow-model';
+import { BranchedStep, SequentialStep, Step } from 'tezo-sequential-workflow-model';
 
-export * from 'sequential-workflow-model';
+export * from 'tezo-sequential-workflow-model';
 
 /**
  * @deprecated Use {@link Step} instead.

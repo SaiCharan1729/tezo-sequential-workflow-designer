@@ -6,7 +6,7 @@ const ts = typescript({
 	useTsconfigDeclarationDir: true
 });
 
-const external = ['sequential-workflow-model'];
+const external = ['tezo-sequential-workflow-model'];
 
 export default [
 	{

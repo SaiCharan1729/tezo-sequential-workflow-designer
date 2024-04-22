@@ -65,10 +65,10 @@
 		"prettier:fix": "prettier --write ./src ./sass"
 	},
 	"dependencies": {
-		"sequential-workflow-model": "^0.2.0"
+		"tezo-sequential-workflow-model": "1.0.4"
 	},
 	"peerDependencies": {
-		"sequential-workflow-model": "^0.2.0"
+		"tezo-sequential-workflow-model": "^1.0.4"
 	},
 	"devDependencies": {
 		"@rollup/plugin-node-resolve": "^15.0.1",

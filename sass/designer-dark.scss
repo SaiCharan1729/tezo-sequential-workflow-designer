@@ -49,7 +49,7 @@
 @include sqd-theme-region('dark', $strokeColor: #434343, $strokeColorSelected: #fff);
 @include sqd-theme-placeholder('dark', $rectFillColor: #0e0e0e, $rectStrokeColor: #6a6a6a, $rectFillHovered: #ed4800);
 @include sqd-theme-validation-error-badge('dark', $triangleFillColor: #ffa200, $iconFillColor: #000);
-
+@include sqd-theme-step-status-badge("dark");
 @include sqd-theme-start-stop-root-component('dark', $circleFillColor: #2c18df, $iconFillColor: #fff);
 
 @include sqd-theme-task-step-component(
