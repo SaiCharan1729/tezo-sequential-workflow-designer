@@ -68,7 +68,7 @@ export class Workspace implements WorkspaceController {
 		view.bindContextMenu((p, t) => workspace.onContextMenu(p, t));
 		return workspace;
 	}
-
+	public readonly onRendered = new SimpleEvent<void>();
 	public readonly onReady = new SimpleEvent<void>();
 	public isValid = false;
 

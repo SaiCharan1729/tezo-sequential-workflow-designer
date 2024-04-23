@@ -178,6 +178,19 @@ export class Designer<TDefinition extends Definition = Definition> {
 		this.api.workspace.updateBadges();
 	}
 
+	public async replaceDefinition(definition: TDefinition) {
+		this.getHistoryController().replaceDefinition(definition);
+		await Promise.all([
+			this.view.workspace.onRendered.first(), // This should be fired first
+			this.onDefinitionChanged.first()
+		]);
+	}
+	private getHistoryController(): HistoryController {
+		if (!this.historyController) {
+			throw new Error('Undo feature is not activated');
+		}
+		return this.historyController;
+	}
 	/**
 	 * @returns a flag that indicates whether the toolbox is collapsed.
 	 */

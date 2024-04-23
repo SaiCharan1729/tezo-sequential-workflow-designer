@@ -2,6 +2,7 @@ import { ObjectCloner } from './core/object-cloner';
 import { DesignerState } from './designer-state';
 import { DefinitionChangeType, DesignerConfiguration, UndoStack, UndoStackItem } from './designer-configuration';
 import { DefinitionModifier } from './definition-modifier';
+import { Definition } from 'tezo-sequential-workflow-model';
 
 export class HistoryController {
 	public static create(
@@ -20,12 +21,12 @@ export class HistoryController {
 		};
 		const controller = new HistoryController(stack, state, definitionModifier, configuration.undoStackSize);
 		if (!initialStack) {
-			controller.remember(DefinitionChangeType.rootReplaced, null);
+			controller.rememberCurrent(DefinitionChangeType.rootReplaced, null);
 		}
 
 		state.onDefinitionChanged.subscribe(event => {
 			if (event.changeType !== DefinitionChangeType.rootReplaced) {
-				controller.remember(event.changeType, event.stepId);
+				controller.rememberCurrent(event.changeType, event.stepId);
 			}
 		});
 		return controller;
@@ -60,7 +61,15 @@ export class HistoryController {
 		return { ...this.stack };
 	}
 
-	private remember(changeType: DefinitionChangeType, stepId: string | null) {
+	public replaceDefinition(definition: Definition) {
+		if (definition == this.state.definition) {
+			throw new Error('Cannot use the same instance of definition');
+		}
+
+		this.remember(definition, DefinitionChangeType.rootReplaced, null);
+		this.commit();
+	}
+	private remember(sourceDefinition: Definition,changeType: DefinitionChangeType, stepId: string | null) {
 		const definition = ObjectCloner.deepClone(this.state.definition);
 
 		if (this.stack.items.length > 0 && this.stack.index === this.stack.items.length) {
@@ -84,7 +93,9 @@ export class HistoryController {
 
 		this.stack.index = this.stack.items.length;
 	}
-
+	private rememberCurrent(changeType: DefinitionChangeType, stepId: string | null) {
+		this.remember(this.state.definition, changeType, stepId);
+	}
 	private commit() {
 		const definition = ObjectCloner.deepClone(this.stack.items[this.stack.index - 1].definition);
 		this.definitionModifier.replaceDefinition(definition);

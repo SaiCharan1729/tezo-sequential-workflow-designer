@@ -23,6 +23,15 @@ export class SimpleEvent<T> {
 	public count(): number {
 		return this.listeners.length;
 	}
+	public first(): Promise<T> {
+		return new Promise(resolve => {
+			const handler = (value: T) => {
+				this.unsubscribe(handler);
+				resolve(value);
+			};
+			this.subscribe(handler);
+		});
+	}
 }
 
 export type SimpleEventListener<T> = (value: T) => void;
