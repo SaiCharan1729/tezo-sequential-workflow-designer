@@ -28,9 +28,14 @@ export class StepStatusBadgeView implements BadgeView {
                 icon = Icons.appendPath(g, 'sqd-step-status-icon', Icons.progress, cfg.iconSize);
                 break; 
              } 
-			case StepStatus.error: { 
-			    g.classList.add("sqd-step-status-rejected");
+			case StepStatus.warning: { 
+			    g.classList.add("sqd-step-status-warning");
 				icon = Icons.appendPath(g, 'sqd-step-status-icon', Icons.alert, cfg.iconSize);
+			   	break; 
+			} 
+			case StepStatus.error: { 
+			    g.classList.add("sqd-step-status-error");
+				icon = Icons.appendPath(g, 'sqd-step-status-icon', Icons.close, cfg.iconSize);
 			   	break; 
 			} 
 		 } 

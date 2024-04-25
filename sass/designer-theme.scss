@@ -246,8 +246,11 @@
 		.sqd-step-status-loaded {
 			fill: green;
 		}
-		.sqd-step-status-rejected {
+		.sqd-step-status-warning {
 			fill: #ffa200;
+		}
+		.sqd-step-status-error {
+			fill: red;
 		}
 		.sqd-step-status-icon {
 			fill:white ;
