@@ -37,7 +37,7 @@ export class StepStatusBadge implements Badge {
                 this.view = null;
             } 
             else {
-                this.view = StepStatusBadgeView.create(this.parentElement, this.stepStatus, this.configuration);
+                this.view = StepStatusBadgeView.create(this.parentElement, this.stepContext.step.stepStatus, this.configuration);
             }
         }
         return isValid && result;

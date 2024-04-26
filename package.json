@@ -1,7 +1,7 @@
 {
 	"name": "tezo-sequential-workflow-designer",
 	"description": "Forked version of sequential workflow designer",
-	"version": "1.0.19",
+	"version": "1.0.20",
 	"type": "module",
 	"main": "./lib/esm/index.js",
 	"types": "./lib/index.d.ts",
